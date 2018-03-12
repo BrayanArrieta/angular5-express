@@ -2,6 +2,7 @@ const express = require('express');
 // const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
+const morgan= require('morgan');
 const app = express();
 
 // API file for interacting with MongoDB
@@ -11,6 +12,7 @@ const app = express();
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false}));
 
+app.use(morgan('dev'));
 // Angular DIST output folder
 app.use(express.static(path.join(__dirname, 'dist')));
 
